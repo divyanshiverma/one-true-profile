@@ -6,12 +6,21 @@ import { Request, Response } from 'express';
 @Controller('user')
 export class UserController {
   constructor(private readonly userService: UserService) {}
-  
+
   @Get('profile')
   @UseGuards(AuthGuard)
-  async view(@Req() req: Request, @Res() res: Response) {
+  async viewProfile(@Req() req: Request, @Res() res: Response) {
     const userId = res.locals.userId;
     const user = await this.userService.getById(userId)
     return res.status(200).send(user);
+  }
+
+  @Patch('profile')
+  @UseGuards(AuthGuard)
+  async editProfile(@Req() req: Request, @Res() res: Response) {
+    const userId = res.locals.userId;
+    const data = req.body;
+    const user = await this.userService.getByIdAndUpdate(userId, data)
+    return res.status(201).send(user);
   }
 }

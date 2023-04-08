@@ -26,4 +26,15 @@
   }
   ```
 7. Do all other requests with header `X-Access-Token` and value as token from above
-8. Get the profile at GET `/user/profile` 
+8. Get the profile at GET `/user/profile`
+9. Make a collection of cities with at least one document.
+  ```
+  {
+      "_id": {
+      "$oid": "64317e5b1dc5c36a313c6ad3"
+    },
+    "city": "lucknow",
+    "state": "up",
+    "country": "india"
+  }
+  ```
