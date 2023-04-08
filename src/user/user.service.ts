@@ -12,4 +12,8 @@ export class UserService {
     if(existing) return existing;
     return await this.userModel.create({email})
   }
+
+  async getById(userId: string): Promise<UserDocument> {
+    return await this.userModel.findById(userId)
+  }
 }
