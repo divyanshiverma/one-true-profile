@@ -8,22 +8,19 @@ export class User {
   @Prop({ required: true, unique: true })
   email: string;
 
-  @Prop({ required: true })
-  password: string;
-
-  @Prop({ required: true })
+  @Prop()
   firstName: string;
 
-  @Prop({ required: true })
+  @Prop()
   lastName: string;
 
-  @Prop({ required: true })
+  @Prop()
   city: string;
 
-  @Prop({ required: true })
+  @Prop()
   state: string;
 
-  @Prop({ required: true })
+  @Prop()
   country: string;
 
   @Prop()
