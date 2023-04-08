@@ -28,9 +28,6 @@ export class User {
 
   @Prop()
   photo: string;
-
-  @Prop()
-  otp: number;
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);
